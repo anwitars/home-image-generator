@@ -1,0 +1,4 @@
+# Python version management
+.python-version
+
+.env
