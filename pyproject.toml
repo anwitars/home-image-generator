@@ -6,7 +6,11 @@ authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10|^3.11"
+python = ">=3.10,<3.13"
+starlette = "^0.32.0.post1"
+uvicorn = "^0.24.0.post1"
+pillow = "^10.1.0"
+numpy = "^1.26.2"
 
 
 [build-system]
