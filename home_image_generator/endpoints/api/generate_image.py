@@ -5,8 +5,13 @@ from PIL.Image import fromarray as image_from_array
 from io import BytesIO
 
 def image_byte_stream() -> BytesIO:
-    zeroes = np.zeros((512, 512, 3), dtype=np.uint8)
-    image_bytes = image_from_array(zeroes)
+    image_data = np.zeros((512, 512, 3), dtype=np.uint8)
+
+    # randomize color
+    color = np.random.randint(0, 255, 3, dtype=np.uint8)
+    image_data[:] = color
+
+    image_bytes = image_from_array(image_data)
 
     buffer = BytesIO()
     image_bytes.save(buffer, format="PNG")
